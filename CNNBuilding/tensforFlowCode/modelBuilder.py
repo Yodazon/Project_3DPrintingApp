@@ -63,4 +63,8 @@ model.compile(
 
 
 # Step 4: Train your model
-history = model.fit(train_ds,batch_size=50,shuffle=True, epochs=10, validation_data=(val_ds))
+history = model.fit(train_ds,
+                    batch_size=50,
+                    shuffle=True, 
+                    epochs=10, 
+                    validation_data=val_ds)
