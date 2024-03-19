@@ -4,7 +4,7 @@ import streamlit as st
 import preprocessImg as pImg
 import torch
 import torchvision.models as models
-import pyTorchModel
+import pyTorchModel as py
 
 st.title("3D Printing Issue Solver")
 
@@ -18,7 +18,7 @@ def predictImage(processedImage):
         else "cpu"
     )
 
-    model = pyTorchModel().to(device)
+    model = py.pyTorchModel().to(device)
     model_weights_path = "CNNBuilding\models_in_folder\CNNModelV0_2.pth"
     model.load_state_dict(torch.load(model_weights_path))
 
