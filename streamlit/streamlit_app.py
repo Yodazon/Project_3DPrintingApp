@@ -7,9 +7,12 @@ st.write("Hi there! Welcome to the 3D Print App, where we try to solve your 3D P
 
 uploaded_image = st.file_uploader("Upload Image Here")
 
-st.write("Image you have uploaded is below:")
-st.image(uploaded_image)
 
-processedImage = pImg.preProcess(uploaded_image)
+if uploaded_image is not None:
+    st.write("Image you have uploaded is below:")
+    st.image(uploaded_image)
+    processedImage = pImg.preProcess(uploaded_image)
+else:
+    st.write("No image yet")
 
 
