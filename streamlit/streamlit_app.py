@@ -12,7 +12,7 @@ def predictImage(processedImage):
     class_names = {0: 'good', 1: 'spaghetti', 2: 'stringing', 3: 'underextrusion'}
 
     model = py.pyTorchModel()
-    model_weights_path = "CNNBuilding\models_in_folder\CNNModelV0_2.pth"
+    model_weights_path = "..\CNNBuilding\models_in_folder\CNNModelV0_2.pth"
     model.load_state_dict(torch.load(model_weights_path))
 
     model.eval()
