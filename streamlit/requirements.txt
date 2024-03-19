@@ -1,2 +1,3 @@
-PIL
+pillow
+torch 
 torchvision
