@@ -5,14 +5,22 @@ import preprocessImg as pImg
 import torch
 import torchvision.models as models
 import pyTorchModel as py
+import os
 
 st.title("3D Printing Issue Solver")
 
 def predictImage(processedImage):
+
     class_names = {0: 'good', 1: 'spaghetti', 2: 'stringing', 3: 'underextrusion'}
 
+
+    # Get the parent directory of the current directory (streamlit)
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    # Construct the path to the model weights in the CNNBuilding folder
+    model_weights_path = os.path.join(parent_dir, "..", "CNNBuilding", "models_in_folder", "CNNModelV0_2.pth")
+
+
     model = py.pyTorchModel()
-    model_weights_path = "..\CNNBuilding\models_in_folder\CNNModelV0_2.pth"
     model.load_state_dict(torch.load(model_weights_path))
 
     model.eval()
