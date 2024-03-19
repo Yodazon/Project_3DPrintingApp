@@ -40,7 +40,7 @@ uploaded_image = st.file_uploader("Upload Image Here")
 if uploaded_image is not None:
     st.write("Image you have uploaded is below:")
     st.image(uploaded_image)
-    processedImage = pImg.preProcess(uploaded_image)
+    processedImage = pImg.preProcess(uploaded_image, width= 100)
 
     prediction = predictImage(processedImage)
     st.write(f"The predicted problem is {prediction} ")
