@@ -10,23 +10,13 @@ st.title("3D Printing Issue Solver")
 
 def predictImage(processedImage):
     class_names = {0: 'good', 1: 'spaghetti', 2: 'stringing', 3: 'underextrusion'}
-    device = (
-        "cuda"
-        if torch.cuda.is_available()
-        else "mps"
-        if torch.backends.mps.is_available()
-        else "cpu"
-    )
 
-    model = py.pyTorchModel().to(device)
+    model = py.pyTorchModel()
     model_weights_path = "CNNBuilding\models_in_folder\CNNModelV0_2.pth"
     model.load_state_dict(torch.load(model_weights_path))
 
     model.eval()
-
-    with torch.no_grad():
-        input_image = processedImage.to(device)
-        output = model(input_image)
+    output = model(processedImage)
     
     predicted_index = output.argmax(1).item()
     predicted_class_name = class_names[predicted_index]

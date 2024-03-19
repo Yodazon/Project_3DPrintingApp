@@ -3,9 +3,8 @@ import torch.nn as nn
 
 
 class pyTorchModel(nn.Module):
-    def __init__(self,ngpu, num_classes=4):
+    def __init__(self, num_classes=4):
         super(pyTorchModel, self).__init__()
-        self.ngpu = ngpu
         self.layer1 = nn.Sequential(
             nn.Conv2d(3, 96, kernel_size=11, stride=4, padding=0),
             nn.BatchNorm2d(96),
