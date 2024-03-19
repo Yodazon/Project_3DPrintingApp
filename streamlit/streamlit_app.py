@@ -21,7 +21,7 @@ def predictImage(processedImage):
 
 
     model = py.pyTorchModel()
-    model.load_state_dict(torch.load(model_weights_path))
+    model.load_state_dict(torch.load(model_weights_path, map_location=torch.device('cpu')))
 
     model.eval()
     output = model(processedImage)
