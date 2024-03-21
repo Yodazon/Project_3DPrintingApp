@@ -38,7 +38,7 @@ st.write("")
 st.write("The solving part is still under development. At the moment the program can determine what your issue is")
 
 uploaded_image = st.file_uploader("Upload Image Here")
-
+st.write("hellO!!!")
 if uploaded_image is not None:
     st.write("Image you have uploaded is below:")
     st.image(uploaded_image, width=500)
