@@ -6,6 +6,7 @@ import torch
 import torchvision.models as models
 import pyTorchModel as py
 import os
+import time
 
 st.title("3D Printing Issue Solver")
 
@@ -43,8 +44,8 @@ if uploaded_image is not None:
     st.write("Image you have uploaded is below:")
     st.image(uploaded_image, width=500)
     with st.spinner("Please Wait..."):
+        time.sleep(5)
         processedImage = pImg.preProcess(uploaded_image)
-
         prediction = predictImage(processedImage)
         st.write(f"The predicted problem is {prediction} ")
 else:
