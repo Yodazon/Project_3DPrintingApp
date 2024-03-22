@@ -10,6 +10,7 @@ import time
 
 st.title("3D Printing Issue Solver")
 
+#Function for model prediction
 def predictImage(processedImage):
 
     class_names = {0: 'good', 1: 'spaghetti', 2: 'stringing', 3: 'underextrusion'}
@@ -44,7 +45,10 @@ if uploaded_image is not None:
     st.image(uploaded_image, width=500)
     with st.spinner("Please Wait..."):
         time.sleep(2)
+        #Calling to pre process image
         processedImage = pImg.preProcess(uploaded_image)
+
+        #Calling the model
         prediction = predictImage(processedImage)
         st.write(f"The predicted problem is {prediction} ")
 else:
