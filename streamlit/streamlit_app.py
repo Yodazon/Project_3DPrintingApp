@@ -33,6 +33,15 @@ def predictImage(processedImage):
     
     return predicted_class_name
 
+#Function to store images and their predictions
+@st.cache_data
+def fetch_and_cache_image(uploadedImage,processedImage, prediction):
+
+
+
+#Function for Sidebar
+
+
 
 
 st.write("Hi there! Welcome to the 3D Print App, where we try to solve your 3D Printing issues")
@@ -40,6 +49,8 @@ st.write("")
 st.write("The solving part is still under development. At the moment the program can determine what your issue is")
 
 uploaded_image = st.file_uploader("Upload Image Here")
+
+
 if uploaded_image is not None:
     st.write("Image you have uploaded is below:")
     st.image(uploaded_image, width=500)
@@ -52,4 +63,9 @@ if uploaded_image is not None:
         prediction = predictImage(processedImage)
         st.write(f"The predicted problem is {prediction} ")
 else:
+    
     st.error('No file Uploaded')
+
+
+st.dataframe()
+
