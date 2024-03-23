@@ -34,11 +34,8 @@ def predictImage(processedImage):
     return predicted_class_name
 
 #Function to store images and their predictions
-@st.cache_data
-def fetch_and_cache_image(uploadedImage,processedImage, prediction):
-
-
-
+#@st.cache_data
+#def fetch_and_cache_image(uploadedImage,processedImage, prediction):
 #Function for Sidebar
 
 
