@@ -18,3 +18,4 @@ def preProcess(uploaded_image):
     input_image = transform(image).unsqueeze(0)
 
     return input_image
+
