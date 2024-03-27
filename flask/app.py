@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 import pyTorchModel as py
 from flask import Flask, jsonify, request
+
 app = Flask(__name__)
 
 # Get the parent directory of the current directory (streamlit)
