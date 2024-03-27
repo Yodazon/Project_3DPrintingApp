@@ -74,6 +74,7 @@ st.write("The following button is an API call to render")
 result = st.button("Click for Prediction")
 
 if result:
+    st.write("running")
     resp = requests.post("https://project-3dprintingapp.onrender.com", uploaded_image)
     st.write("The predicted problem is")
     st.write(f"{resp}")
