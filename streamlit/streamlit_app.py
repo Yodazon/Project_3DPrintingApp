@@ -64,17 +64,18 @@ else:
     st.error('No file Uploaded')
 
 #Adding dataframe for cached images?
-#st.dataframe()
+st.dataframe()
+
+
+
+
 
 ##CODE FOR API REQUEST TO FLASK IN RENDER
-import requests
-
-
-st.write("The following button is an API call to render")
-result = st.button("Click for Prediction")
-
-if result:
-    st.write("running")
-    resp = requests.post("https://project-3dprintingapp.onrender.com", uploaded_image)
-    st.write("The predicted problem is")
-    st.write(f"{resp}")
+# import requests
+# st.write("The following button is an API call to render")
+# result = st.button("Click for Prediction")
+# if result:
+#     st.write("running")
+#     resp = requests.post("https://project-3dprintingapp.onrender.com", uploaded_image)
+#     st.write("The predicted problem is")
+#     st.write(f"{resp}")
