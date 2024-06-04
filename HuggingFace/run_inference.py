@@ -1,6 +1,10 @@
-from transformers import pipeline
-HF_API_Key = "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"
+from transformers import AutoTokenizer, AutoModelForImageClassification
+import torch
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
+HF_API_KEY = os.getenv('HF_KEY')
 
 
 import torchvision.transforms as transforms
@@ -26,14 +30,21 @@ def preProcess(uploaded_image):
 
 
 
+model_name = 'Yodazon/3DPrintFailureType'
+tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token = HF_API_KEY)
+model = AutoModelForImageClassification.from_pretrained(model_name, use_auth_token = HF_API_KEY)
 
+image_url = "3d-print-fail.jpg"
+preProcessed = preProcess(image_url)
+input_file = preProcessed
 
+inputs = tokenizer(input_file, return_tensors="pt")
 
+with torch.no_grad():
+    outputs = model(**inputs)
 
-from langchain_community.llms import huggingface_hub
+logits = outputs.logits
 
-model = huggingface_hub(repo_id = "Yodazon/3DPrintFailureType", huggingface_api_token = HF_API_Key)
+probabilities = torch.nn.functional.softmax(logits, dim=-1)
 
-processed_img = preProcess("3d-print-fail.jpg")
-
-print(model.invoke(processed_img))
+print (probabilities)

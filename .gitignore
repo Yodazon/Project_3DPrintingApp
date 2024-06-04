@@ -8,3 +8,4 @@
 *.ort
 *.pyc
 *.ptl
+*.env
