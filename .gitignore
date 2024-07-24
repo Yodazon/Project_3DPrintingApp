@@ -9,3 +9,6 @@
 *.pyc
 *.ptl
 *.env
+CNNBuilding/TF_code/fingerprint.pb
+CNNBuilding/TF_code/variables/variables.data-00000-of-00001
+CNNBuilding/TF_code/variables/variables.index
