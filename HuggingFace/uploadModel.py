@@ -7,7 +7,7 @@ import os
  # Get the parent directory of the current directory (HuggingFace)
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 # Construct the path to the model weights in the CNNBuilding folder
-model_weights_path = os.path.join(parent_dir, "..", "CNNBuilding", "models_in_folder", "CNNModelV0_2.pth")
+model_weights_path = os.path.join(parent_dir, "..", "CNNBuilding", "models_in_folder", "CNNModelV0_3.pth")
 
 
 model = py.pyTorchModel()
