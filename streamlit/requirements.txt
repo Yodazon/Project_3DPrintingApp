@@ -3,3 +3,9 @@ requests
 torch 
 torchvision
 streamlit
+
+json5
+numpy
+pandas
+python-dotenv
+streamlit
